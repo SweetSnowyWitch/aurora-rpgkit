@@ -87,7 +87,7 @@ public class ExplosionEffect extends UseEffect {
     public class Used extends UseEffect.Used {
         protected final float blastResistanceDecrease;
         protected final boolean dropBlocks;
-        protected final boolean breakBlocks;
+        protected boolean breakBlocks;
         protected final float powerMultiplier;
 
         protected Used(SpellBuildCondition.Context ctx) {

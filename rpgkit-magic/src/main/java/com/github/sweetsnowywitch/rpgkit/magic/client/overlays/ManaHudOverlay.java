@@ -33,49 +33,48 @@ public class ManaHudOverlay implements HudRenderCallback {
         var x = 0;
         var y = 0;
         var client = MinecraftClient.getInstance();
+        var comp = client.player.getComponent(ModComponents.CAST);
 
-        assert client != null;
-        assert client.player != null;
-        assert client.interactionManager != null;
-        var manaComponent = client.player.getComponent(ModComponents.MANA);
-        if (manaComponent.getMaxValue() == 0) {
-            return;
-        }
-
-
-        if (client.interactionManager.getCurrentGameMode().equals(GameMode.SURVIVAL) ||
-                client.interactionManager.getCurrentGameMode().equals(GameMode.ADVENTURE)) {
-
-            var width = client.getWindow().getScaledWidth();
-            var height = client.getWindow().getScaledHeight();
-            x = width / 2;
-            y = height;
-
-            RenderSystem.setShader(GameRenderer::getPositionTexShader);
-            RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
-
-            RenderSystem.setShaderTexture(0, EMPTY_MANA);
-            DrawableHelper.drawTexture(matrixStack, x - 118, y - 60, 0, 0, 32, 64,
-                    32, 64);
-
-            switch ((int) ((float) manaComponent.getValue() / manaComponent.getMaxValue() * 10)) {
-                case 0 -> RenderSystem.setShaderTexture(0, ZERO_MANA);
-                case 1 -> RenderSystem.setShaderTexture(0, ONE_MANA);
-                case 2 -> RenderSystem.setShaderTexture(0, TWO_MANA);
-                case 3 -> RenderSystem.setShaderTexture(0, THREE_MANA);
-                case 4 -> RenderSystem.setShaderTexture(0, FOUR_MANA);
-                case 5 -> RenderSystem.setShaderTexture(0, FIVE_MANA);
-                case 6 -> RenderSystem.setShaderTexture(0, SIX_MANA);
-                case 7 -> RenderSystem.setShaderTexture(0, SEVEN_MANA);
-                case 8 -> RenderSystem.setShaderTexture(0, EIGHT_MANA);
-                case 9 -> RenderSystem.setShaderTexture(0, NINE_MANA);
-                case 10 -> RenderSystem.setShaderTexture(0, TEN_MANA);
+        if (comp.isBuilding()) {
+            var manaComponent = client.player.getComponent(ModComponents.MANA);
+            if (manaComponent.getMaxValue() == 0) {
+                return;
             }
 
-            if (manaComponent.getValue() == 0)
+            if (client.interactionManager.getCurrentGameMode().equals(GameMode.SURVIVAL) ||
+                    client.interactionManager.getCurrentGameMode().equals(GameMode.ADVENTURE)) {
+
+                var width = client.getWindow().getScaledWidth();
+                var height = client.getWindow().getScaledHeight();
+                x = width / 2;
+                y = height;
+
+                RenderSystem.setShader(GameRenderer::getPositionTexShader);
+                RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
+
                 RenderSystem.setShaderTexture(0, EMPTY_MANA);
-            DrawableHelper.drawTexture(matrixStack, x - 118, y - 60, 0, 0, 32, 64,
-                    32, 64);
+                DrawableHelper.drawTexture(matrixStack, x - 118, y - 60, 0, 0, 32, 64,
+                        32, 64);
+
+                switch ((int) ((float) manaComponent.getValue() / manaComponent.getMaxValue() * 10)) {
+                    case 0 -> RenderSystem.setShaderTexture(0, ZERO_MANA);
+                    case 1 -> RenderSystem.setShaderTexture(0, ONE_MANA);
+                    case 2 -> RenderSystem.setShaderTexture(0, TWO_MANA);
+                    case 3 -> RenderSystem.setShaderTexture(0, THREE_MANA);
+                    case 4 -> RenderSystem.setShaderTexture(0, FOUR_MANA);
+                    case 5 -> RenderSystem.setShaderTexture(0, FIVE_MANA);
+                    case 6 -> RenderSystem.setShaderTexture(0, SIX_MANA);
+                    case 7 -> RenderSystem.setShaderTexture(0, SEVEN_MANA);
+                    case 8 -> RenderSystem.setShaderTexture(0, EIGHT_MANA);
+                    case 9 -> RenderSystem.setShaderTexture(0, NINE_MANA);
+                    case 10 -> RenderSystem.setShaderTexture(0, TEN_MANA);
+                }
+
+                if (manaComponent.getValue() == 0)
+                    RenderSystem.setShaderTexture(0, EMPTY_MANA);
+                DrawableHelper.drawTexture(matrixStack, x - 118, y - 60, 0, 0, 32, 64,
+                        32, 64);
+            }
         }
     }
 }

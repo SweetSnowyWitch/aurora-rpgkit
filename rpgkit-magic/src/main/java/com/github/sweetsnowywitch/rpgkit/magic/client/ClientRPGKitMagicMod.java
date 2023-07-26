@@ -1,7 +1,9 @@
 package com.github.sweetsnowywitch.rpgkit.magic.client;
 
+import com.github.clevernucleus.playerex.api.client.PageRegistry;
 import com.github.sweetsnowywitch.rpgkit.RPGKitMod;
 import com.github.sweetsnowywitch.rpgkit.magic.RPGKitMagicMod;
+import com.github.sweetsnowywitch.rpgkit.magic.client.gui.MagicPageLayer;
 import com.github.sweetsnowywitch.rpgkit.magic.client.overlays.ActiveCastOverlay;
 import com.github.sweetsnowywitch.rpgkit.magic.client.overlays.ManaHudOverlay;
 import com.github.sweetsnowywitch.rpgkit.magic.client.particle.GenericSpellParticle;

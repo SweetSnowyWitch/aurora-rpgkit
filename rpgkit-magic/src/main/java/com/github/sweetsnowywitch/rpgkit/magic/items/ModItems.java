@@ -12,6 +12,7 @@ public class ModItems {
     public static final Item SPELL_ITEM = new SpellItem(new FabricItemSettings().maxCount(1));
     public static final Item CATALYST_BAG = new CatalystBagItem(new FabricItemSettings().maxCount(1));
     public static final Item MAGIC_FUEL = new MagicFuelItem(new FabricItemSettings().maxCount(1).fireproof());
+    //public static final Item GRIMOIRE = new GrimoireItem(new FabricItemSettings().maxCount(1));
 
     public static void register() {
         // Registry.register(Registries.ITEM, new Identifier(RPGKitMagicMod.MOD_ID, "caster"), ITEM_CASTER);

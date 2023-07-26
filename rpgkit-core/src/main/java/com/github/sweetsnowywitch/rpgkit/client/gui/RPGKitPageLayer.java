@@ -45,7 +45,7 @@ public abstract class RPGKitPageLayer extends PageLayer {
         this.buttonDelay.put(new Identifier(RPGKitMod.MOD_ID, "class_points"), 0);
         this.buttonDelay.put(new Identifier(RPGKitMod.MOD_ID, "rouge"), 1);
         this.buttonDelay.put(new Identifier(RPGKitMod.MOD_ID, "warrior"), 2);
-        this.buttonDelay.put(new Identifier(RPGKitMod.MOD_ID, "wizard"), 3);
+        //this.buttonDelay.put(new Identifier(RPGKitMod.MOD_ID, "wizard"), 3);
     }
 
     private boolean canRefund() {
@@ -138,7 +138,7 @@ public abstract class RPGKitPageLayer extends PageLayer {
     }
 
     static {
-        BUTTON_KEYS = ImmutableList.of(new Identifier(RPGKitMod.MOD_ID, "class_points"), new Identifier(RPGKitMod.MOD_ID, "rouge"), new Identifier(RPGKitMod.MOD_ID, "warrior"), new Identifier(RPGKitMod.MOD_ID, "wizard"));
+        BUTTON_KEYS = ImmutableList.of(new Identifier(RPGKitMod.MOD_ID, "class_points"), new Identifier(RPGKitMod.MOD_ID, "rouge"), new Identifier(RPGKitMod.MOD_ID, "warrior"));
         COMPONENTS.add(RenderComponent.of((entity) -> {
             var current = ClientUtil.FORMATTING_2.format(entity.getComponent(ModComponents.CLASS).getUndistributedLevels());
             return Text.translatable("rpgkit.gui.page.attributes.text.class_points", current).formatted(Formatting.DARK_GRAY);
