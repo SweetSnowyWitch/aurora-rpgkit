@@ -19,7 +19,7 @@
   "area_effects": [
     {
       "type": "rpgkitmagic:surface_spray",
-      "area_coverage": 0.25,
+      "area_coverage": 0.1,
       "effects": [
         {
           "type": "rpgkitmagic:transmute_block",
@@ -35,7 +35,7 @@
         },
         {
           "type": "rpgkitmagic:explosion",
-          "power_multiplier": 3,
+          "power_multiplier": 1,
           "condition": {
             "first_element": true
           },
@@ -43,7 +43,7 @@
             {
               "for": "rpgkitmagic:explosion",
               "power": {
-                "add": 0.5
+                "add": 0.2
               },
               "condition": {
                 "stacked": 2
@@ -59,7 +59,7 @@
             {
               "for": "rpgkitmagic:explosion",
               "power": {
-                "add": 0.3
+                "add": 0.1
               },
               "condition": {
                 "has_element": {
@@ -71,7 +71,7 @@
             {
               "for": "rpgkitmagic:explosion",
               "power": {
-                "add": 0.4
+                "add": 0.2
               },
               "condition": {
                 "has_element": {
@@ -83,7 +83,7 @@
             {
               "for": "rpgkitmagic:explosion",
               "power": {
-                "add": 0.5
+                "add": 0.3
               },
               "condition": {
                 "has_element": {
@@ -129,11 +129,11 @@
     },
     {
       "type": "rpgkitmagic:area_spread",
-      "radius": 2,
+      "radius": 1,
       "effect": [
         {
           "type": "rpgkitmagic:surface_spray",
-          "area_coverage": 0.25,
+          "area_coverage": 0.1,
           "effects": [
             {
               "type": "rpgkitmagic:transmute_block",

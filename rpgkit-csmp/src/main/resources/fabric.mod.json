@@ -34,6 +34,6 @@
     "fabricloader": ">=0.14.13",
     "fabric": "*",
     "minecraft": "1.19.2",
-    "rpgkit-core": "aurora-0.1"
+    "rpgkit-core": "aurora-1.1"
   }
 }
